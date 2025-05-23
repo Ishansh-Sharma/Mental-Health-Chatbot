@@ -6,7 +6,7 @@ import google.generativeai as genai
 # Initialize the Whisper model
 model = faster_whisper.WhisperModel("base")
 
-genai.configure(api_key="AIzaSyA9w_lt-LcYIbTgq2rqZqe7KTZueHbnMbM")
+genai.configure(api_key="API KEY")
 model_llm = genai.GenerativeModel("gemini-1.5-flash")
 
 # Function to process audio and transcribe speech to text
