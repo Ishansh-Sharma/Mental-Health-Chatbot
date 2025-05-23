@@ -7,7 +7,7 @@ import google.generativeai as genai
 model = faster_whisper.WhisperModel("base")
 
 # Configure Gemini API
-API_KEY = "AIzaSyA9w_lt-LcYIbTgq2rqZqe7KTZueHbnMbM"
+API_KEY = "API KEY"
 genai.configure(api_key=API_KEY)
 model_llm = genai.GenerativeModel("gemini-1.5-flash")
 
