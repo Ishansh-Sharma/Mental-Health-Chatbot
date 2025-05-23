@@ -5,11 +5,11 @@ import faster_whisper
 import google.generativeai as genai
 import io
 
-# Initialize Whisper model for transcription
+
 model = faster_whisper.WhisperModel("base")
 
-# Configure Gemini API for LLM
-API_KEY = "AIzaSyA9w_lt-LcYIbTgq2rqZqe7KTZueHbnMbM"
+
+API_KEY = "YOUR API KEY"
 genai.configure(api_key=API_KEY)
 model_llm = genai.GenerativeModel("gemini-1.5-flash")
 
@@ -23,7 +23,7 @@ def transcribe_audio_to_text():
     audio_data = np.squeeze(recording)
 
     try:
-        # Transcribe the audio using Whisper model
+        
         segments, _ = model.transcribe(audio_data, beam_size=5)
         transcription = " ".join([segment.text for segment in segments])
         return transcription
@@ -31,9 +31,8 @@ def transcribe_audio_to_text():
         st.error(f"Error during transcription: {e}")
         return "I couldn't catch that. Can you try again?"
 
-# Function to get response from LLM (Gemini)
+
 def get_response_from_llm(text):
-    # Fallback if input is empty
     if not text.strip():
         return "I didn't hear anything. Can you try again?"
 
